@@ -8,7 +8,8 @@ namespace BubbleBugSystemController.Logging {
 
     public class LoggingEvents {
 
-        public static EventId FileNotFonund { get; } = new EventId();
+        public static EventId BadFileLoading { get; } = new EventId();
+        public static EventId FileIsEmpty { get; } = new EventId();
 
     }
 }

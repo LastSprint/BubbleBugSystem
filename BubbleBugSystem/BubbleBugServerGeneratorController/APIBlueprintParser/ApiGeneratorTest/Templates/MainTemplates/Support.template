@@ -1,0 +1,43 @@
+using System.Collections.Generic;
+using System;
+using System.Linq;
+
+namespace $projectname$ {
+
+	public class MockNotFoundException : Exception
+    {
+        public MockNotFoundException(): base ("В папке нет мока с нужными параметрами ну или баги при сравнении. Простете((") { }
+    }
+
+    public struct IterativeOptions {
+        public const int ResetIterator = 0;
+    }
+
+    public static class Support {
+
+        public static void ResetEnumerator(IEnumerator<EquatableRequaest> enumer) {
+            if (enumer == null) {
+                return;
+            }
+
+            enumer.Reset();
+        }
+
+        public static ICollection<EquatableRequaest> ReadAllMocks(string methodName) {
+            var resultPath = "$PathToController$" + "/" + "Mocks/" + methodName;
+
+            var files = System.IO.Directory.GetFiles(resultPath).Where(path => path.Split('/').Last().First() != '.');
+
+            var result = new List<EquatableRequaest>();
+
+            foreach (var file in files) {
+                var readed = System.IO.File.ReadAllText(file);
+
+                result.Add(Newtonsoft.Json.JsonConvert.DeserializeObject<EquatableRequaest>(readed));
+            }
+
+            return result;
+
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{943D4192-B79E-47A3-BE2F-8BAD97D1DCE1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>APIBlueprintIntegrationTests</RootNamespace>
+    <AssemblyName>APIBlueprintIntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ResourceAction\ResourceActionParserTest.cs" />
+    <Compile Include="ResourceSection\ResourceSectionTest.cs" />
+    <Compile Include="GroupSection\GroupParserTest.cs" />
+    <Compile Include="ApiDescription\ApiDescriptionParserTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="ResourceAction\valid.apib" />
+    <None Include="ResourceSection\valid.apib" />
+    <None Include="GroupSection\valid.apib" />
+    <None Include="ApiDescription\valid.apib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\APIBlueprintParser\APIBlueprintParser.csproj">
+      <Project>{72739657-B1E8-4F17-AE13-602159696C5C}</Project>
+      <Name>APIBlueprintParser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ResourceAction\" />
+    <Folder Include="ResourceSection\" />
+    <Folder Include="GroupSection\" />
+    <Folder Include="ApiDescription\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
