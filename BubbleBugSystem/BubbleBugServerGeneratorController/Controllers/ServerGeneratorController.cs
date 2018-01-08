@@ -1,14 +1,15 @@
-﻿using BubbleBugSystemController.Logging;
+﻿using BubbleBugServerGeneratorController.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace BubbleBugSystemController.Controllers {
+namespace BubbleBugServerGeneratorController.Controllers
+{
     [Route("api/[controller]")]
-    public class SystemController : Controller {
+    public class ServerGeneratorController : Controller {
 
         private readonly ILogger _logger;
 
-        public SystemController(ILogger logger) {
+        public ServerGeneratorController(ILogger logger) {
             this._logger = logger;
         }
 
