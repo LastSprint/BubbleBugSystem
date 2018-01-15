@@ -9,6 +9,8 @@ namespace BubbleBugServerContainerController.Controllers {
     [Route("api/[controller]")]
     public class CreateNewServerController : Controller {
 
+        public const string RootFolder = "";
+
         public object CreateNewServer(string projectName) {
             var hash = projectName.GetHashCode();
             //TODO: - Make repository
