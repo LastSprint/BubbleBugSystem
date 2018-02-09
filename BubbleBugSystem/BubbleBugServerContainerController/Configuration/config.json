@@ -1,0 +1,4 @@
+﻿{
+  "ServiceRootFolder": "path/to/folder",
+  "DbFilePath":  "path/to/db.json" 
+}
