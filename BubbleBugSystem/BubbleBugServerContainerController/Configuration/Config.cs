@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
+using BubbleBugServerContainerController;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
-namespace BubbleBugServerContainerController.Configuration {
+namespace BubbleBugServiceController.Configuration {
 
     /// <summary>
     /// Contains information for configuration module
@@ -44,7 +43,7 @@ namespace BubbleBugServerContainerController.Configuration {
         /// </summary>
         public long EndPort { get; set; }
 
-        public static Config ReadConfig() {
+        private static Config ReadConfig() {
             var configString = System.Text.Encoding.Default.GetString(Resource.config);
             return JsonConvert.DeserializeObject<Config>(configString);
         }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using BubbleBugServerContainerController.Configuration;
-using BubbleBugServerContainerController.Models;
+using BubbleBugServiceController.Configuration;
+using BubbleBugSharedModels;
 using Newtonsoft.Json;
 
-namespace BubbleBugServerContainerController.DbServices
+namespace BubbleBugServiceController.DbServices
 {
     public interface IRepository<T> {
         IList<T> ReadAll();
@@ -14,38 +14,27 @@ namespace BubbleBugServerContainerController.DbServices
         void Remove(T obj);
     }
 
-    public class ServiceRepository: IRepository<ApiServiceModel> {
+    public class ServiceRepository: IRepository<ServiceModel> {
 
-        private readonly IList<ApiServiceModel> _models;
+        private readonly IList<ServiceModel> _models;
 
         public ServiceRepository() {
             var dbFileContent = File.ReadAllText(Config.Instance.DbFilePath);
-            this._models = JsonConvert.DeserializeObject<List<ApiServiceModel>>(dbFileContent);
+            this._models = JsonConvert.DeserializeObject<List<ServiceModel>>(dbFileContent);
         }
 
-        public IList<ApiServiceModel> ReadAll() {
+        public IList<ServiceModel> ReadAll() {
             return this._models;
         }
 
-        public void Add(ApiServiceModel obj) {
-            if (this._models.First(x => x.ProjectName == obj.ProjectName) != null) {
+        public void Add(ServiceModel obj) {
+            if (this._models.First(x => x.Name == obj.Name) != null) {
                 throw new ArgumentException("Проект с таким именем уже существует");
             }
-
-            var port = this._models.Count == 0 ? this._models.Max(x => x.Port) : Config.Instance.StartPort;
-
-            if (port++ > Config.Instance.EndPort) {
-                throw new SystemException("Закончились свободные порты");
-            }
-
-            obj.Port = port + 1;
-
-            this._models.Add(obj);
-
             JsonConvert.SerializeObject(this._models);
         }
 
-        public void Remove(ApiServiceModel obj) {
+        public void Remove(ServiceModel obj) {
             throw new NotImplementedException();
         }
     }

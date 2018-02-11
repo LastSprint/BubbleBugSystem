@@ -1,0 +1,4 @@
+﻿{
+  "ServiceControllerBaseUri": "http://localhost:54931/",
+  "GetAllServicesRelativeUri": "api/ServiceController/GetAllServices"
+}

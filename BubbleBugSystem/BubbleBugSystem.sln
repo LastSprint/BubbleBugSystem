@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleBugSystemController", "BubbleBugSystemController\BubbleBugSystemController.csproj", "{8046D0B6-815A-40F0-BFCA-32ACF9339DC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbleBugSystemController", "BubbleBugSystemController\BubbleBugSystemController.csproj", "{8046D0B6-815A-40F0-BFCA-32ACF9339DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleBugServerContainerController", "BubbleBugServerContainerController\BubbleBugServerContainerController.csproj", "{F745D788-7599-403A-878F-2140FCEB9657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbleBugServiceController", "BubbleBugServerContainerController\BubbleBugServiceController.csproj", "{F745D788-7599-403A-878F-2140FCEB9657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleBugServerGeneratorController", "BubbleBugServerGeneratorController\BubbleBugServerGeneratorController.csproj", "{500254A0-9F82-4973-A4B4-40E607C1C889}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleBugSharedModels", "SharedModels\BubbleBugSharedModels.csproj", "{0FE0B4B1-0F95-4640-BBCE-55D586263ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F745D788-7599-403A-878F-2140FCEB9657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F745D788-7599-403A-878F-2140FCEB9657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F745D788-7599-403A-878F-2140FCEB9657}.Release|Any CPU.Build.0 = Release|Any CPU
-		{500254A0-9F82-4973-A4B4-40E607C1C889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{500254A0-9F82-4973-A4B4-40E607C1C889}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{500254A0-9F82-4973-A4B4-40E607C1C889}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{500254A0-9F82-4973-A4B4-40E607C1C889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE0B4B1-0F95-4640-BBCE-55D586263ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE0B4B1-0F95-4640-BBCE-55D586263ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE0B4B1-0F95-4640-BBCE-55D586263ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE0B4B1-0F95-4640-BBCE-55D586263ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

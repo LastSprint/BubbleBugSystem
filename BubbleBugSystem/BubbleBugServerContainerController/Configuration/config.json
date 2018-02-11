@@ -1,4 +1,6 @@
 ﻿{
   "ServiceRootFolder": "path/to/folder",
-  "DbFilePath":  "path/to/db.json" 
+  "DbFilePath": "path/to/db.json",
+  "ServiceGeneratorUrl": "http://localhost:123/",
+  "ServiceParserUrl": "http://localhost:1234/"
 }
